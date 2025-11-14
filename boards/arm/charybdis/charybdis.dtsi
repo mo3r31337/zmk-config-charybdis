@@ -13,6 +13,7 @@
         zmk,battery = &vbatt;
         zmk,kscan = &kscan0;
         zmk,physical-layout = &charybdis_6col_layout;
+        zmk,underglow = &led_strip;
     };
 
     vbatt: vbatt {
@@ -180,6 +181,10 @@ zephyr_udc0: &usbd {
     status = "okay";
 };
 
+&pwm0 {
+    status = "okay";
+};
+
 &flash0 {
   partitions {
     compatible = "fixed-partitions";
@@ -200,8 +205,3 @@ zephyr_udc0: &usbd {
     };
   };
 };
-
-
-
-
-
