@@ -65,6 +65,7 @@
   };
 };
 
+/*
 / {
   ext-power: ext-power {
       compatible = "zmk,ext-power-generic";
@@ -73,6 +74,7 @@
       init-delay-ms = <50>;
   };
 };
+*/
 
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
