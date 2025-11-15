@@ -20,7 +20,7 @@
 &pinctrl {
     pwm0_default: pwm0_default {
       group1 {
-        psels = <22>; // Replace with the correct numeric pin value for your hardware
+        psels = <14>; // Replace with the correct numeric pin value for your hardware
       };
     };
 
