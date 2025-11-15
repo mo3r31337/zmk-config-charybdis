@@ -18,20 +18,17 @@
 #
 ---
 include:
-   - board: charybdis_left
-     snippet: studio-rpc-usb-uart
-     cmake-args: -DCONFIG_ZMK_STUDIO_LOCKING=n
-     artifact-name: charybdis_left
-   - board: charybdis_right
-     artifact-name: charybdis_right
-   - board: charybdis_left
-     snippet: studio-rpc-usb-uart cdc-acm-console
-     cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_ZMK_LOG_LEVEL_DBG=y -DCONFIG_CBPRINTF_COMPLETE=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-     artifact-name: charybdis_left_dbg
-   - board: charybdis_right
-     snippet: cdc-acm-console
-     cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_ZMK_LOG_LEVEL_DBG=y -DCONFIG_CBPRINTF_COMPLETE=y
-     artifact-name: charybdis_right_dbg
-   - board: charybdis_left_sr
-     artifact-name: charybdis_left_softreset
-
+  - board: charybdis_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: charybdis_left
+  - board: charybdis_right
+    artifact-name: charybdis_right
+  - board: charybdis_left
+    snippet: studio-rpc-usb-uart cdc-acm-console
+    cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_ZMK_LOG_LEVEL_DBG=y -DCONFIG_CBPRINTF_COMPLETE=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: charybdis_left_dbg
+  - board: charybdis_right
+    snippet: cdc-acm-console
+    cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_ZMK_LOG_LEVEL_DBG=y -DCONFIG_CBPRINTF_COMPLETE=y
+    artifact-name: charybdis_right_dbg
