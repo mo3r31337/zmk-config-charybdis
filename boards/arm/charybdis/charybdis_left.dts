@@ -9,14 +9,26 @@
 #include <dt-bindings/led/led.h>
 #include "charybdis.dtsi"
 
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-names = "default";
+};
+
 &pinctrl {
-    spi1_default: spi1_default {
+    pwm0_default: pwm0_default {
+      group1 {
+        psels = <14>; // Replace with the correct numeric pin value for your hardware
+      };
+    };
+
+    spi3_default: spi3_default {
         group1 {
             psels = <NRF_PSEL(SPIM_MOSI, 0, 12)>;
         };
     };
 
-    spi1_sleep: spi1_sleep {
+    spi3_sleep: spi3_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_MOSI, 0, 12)>;
             low-power-enable;
@@ -27,8 +39,8 @@
 &spi1 {
   compatible = "nordic,nrf-spim";
   status = "okay";
-  pinctrl-0 = <&spi1_default>;
-  pinctrl-1 = <&spi1_sleep>;
+  pinctrl-0 = <&spi3_default>;
+  pinctrl-1 = <&spi3_sleep>;
   pinctrl-names = "default", "sleep";
 
   led_strip: ws2812@0 {
@@ -56,6 +68,13 @@
       gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
       label = "Blue LED";
     };
+  };
+
+  ext-power {
+    compatible = "zmk,ext-power-generic";
+    label = "EXT_POWER";
+    control-gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;
+    init-delay-ms = <50>;
   };
 };
 
